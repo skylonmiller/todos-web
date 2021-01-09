@@ -1,9 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Button, message, Input, Checkbox } from "antd";
 import { MenuUnfoldOutlined } from "@ant-design/icons";
 // import { connect } from "react-redux";
 
 const Tod = props => {
+  const inputEl = useRef(null);
   const [todoItem, setTodoItem] = useState(null);
   const [todoList, setTodoList] = useState([]);
 
@@ -14,11 +15,13 @@ const Tod = props => {
     setTodoItem(e.target.value);
   };
   const btnAddClk = () => {
-    if (![...todoList].includes(todoItem)) {
+    if (todoItem === null || todoItem.trim().length === 0) {
+      message.error("不可为空");
+    } else if ([...todoList].includes(todoItem)) {
+      message.error("TodoList 中已存在相同的 TodoItem");
+    } else {
       setTodoItem("");
       setTodoList([...todoList, todoItem]);
-    } else {
-      message.error("TodoList 中已存在相同的 TodoItem");
     }
   };
   const delTodoItem = ind => {
@@ -26,16 +29,21 @@ const Tod = props => {
     newList.splice(ind, 1);
     setTodoList(newList);
   };
+
+  inputEl && inputEl.current && inputEl.current.focus();
+
   return (
     <>
       <div style={{ width: 600, margin: "100px auto" }}>
         <div>
           <Input
+            ref={inputEl}
             type="text"
             placeholder="请输入待办事项"
             style={{ width: "80%" }}
             value={todoItem}
             prefix={<MenuUnfoldOutlined />}
+            autoFocus={true}
             onChange={valChange}
           ></Input>
           <Button
