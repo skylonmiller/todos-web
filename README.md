@@ -3,8 +3,8 @@
 [![version][0]][1] [![downloads][2]][3]
 
 ## Usage
-
-1. `yarn install`
+Run below command step by step
+1. `yarn install` or `yarn`, after $ or #
 2. dev: `yarn start`
 3. build: `yarn build`
 
