@@ -143,7 +143,7 @@ export default class extends React.PureComponent {
 
   render() {
     const { cron, ...rest } = this.props;
-    // console.log("rest from props : ", rest)
+    // console.log("rest from props  =======>: ", rest)
     return (
       <>
         <Button.Group>
