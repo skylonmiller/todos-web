@@ -7,7 +7,7 @@ Run below command step by step
 1. `yarn install` or `yarn`, after $ or #
 2. dev: `yarn start`
 3. build: `yarn build`
-![image](https://raw.githubusercontent.com/skylonmiller/todos-web/main/src/statics/img/startcommand.png)
+
 
 ## Contributing
 
