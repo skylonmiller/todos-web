@@ -28,11 +28,12 @@ export const menu = [
     path: "/redux-ui",
     icon: <FormOutlined />,
   },
+  /* weipeng sta*/
   {
     path: "/Todo-List",
     title: "TODOS",
     icon: <ShopOutlined />,
   },
-  /* weipeng */
+  /* weipeng end*/
   /* template-example-end */
 ];

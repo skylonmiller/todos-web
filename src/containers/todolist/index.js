@@ -1,8 +1,8 @@
 /* eslint-disable prettier/prettier */
 import React, { useState, useEffect } from "react";
 import "./todo.css";
-import { Button, Table, message, Input, Checkbox } from "antd";
-import { MenuUnfoldOutlined, LockOutlined } from "@ant-design/icons";
+import { Button, message, Input, Checkbox } from "antd";
+import { MenuUnfoldOutlined, } from "@ant-design/icons";
 // import { connect } from "react-redux";
 
 
@@ -12,7 +12,7 @@ const Tod = (props) => {
   const [todoList, setTodoList] = useState([])
 
   useEffect(() => {
-    console.log('init todo list from mongodb, utilize mongoosed---->')
+    console.log('init todo list from mongodb, utilize mongoose---->')
   }, [])
   const valChange = (e) => { setTodoItem(e.target.value) }
   const btnAddClk = () => {
@@ -40,38 +40,3 @@ const Tod = (props) => {
 }
 
 export default Tod
-
-// export default class extends React.PureComponent {
-
-
-//   // btnAddClk = () => this.props.dispatch(cronActions.stop());
-//   btnAddClk = (e) => { console.log(e.target) }
-//   render() {
-//     // const { cron, ...rest } = this.props;
-//     return (
-//       <>
-//         {/* <Button.Group>
-//           {cron.running ? (
-//             <Button onClick={this.stopCron} type="danger">
-//               Auto refresh Stop
-//             </Button>
-//           ) : (
-//               <Button type="primary" onClick={this.startCron}>
-//                 Auto refresh Start
-//               </Button>
-//             )}
-//           <Button onClick={this.resetCron}>Reset</Button>
-//         </Button.Group>
-//         <Table {...rest} /> 
-//         */}
-//         {/* https://ant.design/components/input-cn/ */}
-//         <div style={{ width: 600, margin: '100px auto', }}>
-//           <Input type="text" placeholder="请输入待办事项" style={{ 'width': '80%', }} prefix={<UserOutlined />} ></Input>
-//           <Button type="primary" style={{ 'marginLeft': '3%' }} onClick={this.btnAddClk}>增加</Button>
-
-//         </div>
-
-//       </>
-//     );
-//   }
-// }
