@@ -1,4 +1,4 @@
-# @36node/template-cra-redux
+# 使用 template-cra-redux 模板创建 Todos
 
 [![version][0]][1] [![downloads][2]][3]
 
