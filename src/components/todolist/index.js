@@ -11,9 +11,11 @@ const Tod = props => {
   useEffect(() => {
     console.log("init todo list from mongodb, utilize mongoose---->");
   }, []);
+
   const valChange = e => {
     setTodoItem(e.target.value);
   };
+
   const btnAddClk = () => {
     if (todoItem === null || todoItem.trim().length === 0) {
       message.error("不可为空");
@@ -22,8 +24,10 @@ const Tod = props => {
     } else {
       setTodoItem("");
       setTodoList([...todoList, todoItem]);
+      // send the list to backend, then save into mongodb
     }
   };
+
   const delTodoItem = ind => {
     let newList = [...todoList];
     newList.splice(ind, 1);

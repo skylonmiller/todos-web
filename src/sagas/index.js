@@ -14,6 +14,7 @@ const watchSession = makeSessionWatcher({
   logoutSuccessTypes: [LOGOUT.SUCCESS],
 });
 
+//root 这个 saga 的用途是, 合并 4 个监听功能 ?
 export default function* root() {
   yield all([
     fork(watchApi),
