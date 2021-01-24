@@ -3,11 +3,12 @@
 [![version][0]][1] [![downloads][2]][3]
 
 ## Usage
+
 Run below command step by step
-1. `yarn install` or `yarn`, after $ or #
+
+1. `yarn install` or `yarn`, after \$ or #
 2. dev: `yarn start`
 3. build: `yarn build`
-
 
 ## Contributing
 
@@ -62,22 +63,22 @@ module.exports = {
 };
 ```
 
-## 前端开发指南
+## Frontend develop guideline
 
-note: _这段写起来难度有点大，先用中文写_
+note: _Run below command in vs code, terminal, few minutes later, once got suc signal from terminal, you can open your favourite navigator to access some address, like http://localhost:6060, per tip from terminal_
 
 ```sh
 yarn styleguide
 ```
 
-会打开 styleguide 界面，专门用于组件开发
+### Base Philosophy
 
-### 基本哲学
+We will split components into 2 kinds, with the `redux`, participate in.
 
-在`Redux`的参与下，我们需要把组件分成两种类型：
+1. Container: With state component, `connect` will inject props into this component。
+   From outside, when invoke this component, do not transfer props, apayc, try transfer state in react router.
 
-1. Container: 带状态的组件，通过 connect 将属性直接注入到组件中。外面调用这个组件的时候，尽量不要传递 props，方便在 React Router 中使用。
-2. Component: 纯的无状态组件。
+2. Component: Pure without state component
 
 由于 React-Router v4 版本一直主推动态路由，所以框架中也不再使用静态路由的文件`routes.js`，把路由也当做`UI`的一部分。
 同时也不再需要 layout 目录，layout 成为无状态组件。
